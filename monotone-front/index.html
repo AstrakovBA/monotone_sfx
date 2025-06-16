@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoTone SFX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-wrap">
+                <div class="anim-wrap">
+
+                </div>
+            </div>
+            <div class = "logo-text-wrap">
+                <p class="logo-text">MONOTONE SFX</p>
+                <p class="logo-description">STRAIGHTFORWARD EFFECTS</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="control-wrap">
+        <div class="file-controls">
+            <button type="button" class="btn-load">
+                <i class="fa fa-folder-open"></i> LOAD
+                <input type="file" id="file-input" accept="audio/*" style="display: none;">
+            </button>
+            <button type="button" class="btn-save">
+                <i class="fa fa-save"></i> SAVE
+            </button>
+        </div>
+        <div class="volume-control">
+            <div class="volume-label">MASTER VOLUME:</div>
+            <label>
+                <span class="volume-value-container">
+                    <span id="volume-value">0</span><span class="db-text">dB</span>
+                </span>
+                <input type="range" id="master-volume" min="-20" max="0" value="0" step="0.1">
+            </label>
+        </div>
+    </div>
+
+    <div class="player-wrap">
+        <div id="audiowave" class="wave"></div>
+        <div class="player-panel">
+            <div class="buttons">
+                <button type="button" class="btn-toggle-pause">
+                    <i class="fa fa-play"></i> <i class="fa fa-pause"></i>
+                </button>
+                <button type="button" class="btn-stop">
+                    <i class="fa fa-stop"></i>
+                </button>
+            </div>
+            <div class="player-text">PLAYER</div>
+        </div>
+    </div>
+
+    <div class="fx-wrap">
+        <div class="fx-block fx1">
+            <div class="equalizer-container">
+                <div class="slider-wrapper">
+                    <span class="freq-label">32Hz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="0">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">64Hz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="1">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">125Hz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="2">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">250Hz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="3">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">500Hz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="4">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">1kHz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="5">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">2kHz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="6">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">4kHz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="7">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">8kHz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="8">
+                    <span class="value-label">0dB</span>
+                </div>
+                <div class="slider-wrapper">
+                    <span class="freq-label">16kHz</span>
+                    <input type="range" class="eq-slider" min="-20" max="20" value="0" step="1" data-band="9">
+                    <span class="value-label">0dB</span>
+                </div>
+            </div>
+            <div class="fx-text">EQ</div>
+        </div>
+        <div class="fx-end">
+            <div class="fx-block fx2">
+                <div class="speed-control">
+                    <div class="speed-label">PLAYBACK SPEED:</div>
+                    <input type="number" id="speed-input" min="0.25" max="4" step="0.05" value="1.00">
+                    <div class="pitch-control">
+                        <input type="checkbox" id="preserve-pitch" checked>
+                        <label for="preserve-pitch">PITCH-LOCKED</label>
+                    </div>
+                </div>
+            </div>
+            <div class="fx-end-text">EFFECTS</div>
+        </div>
+    </div>
+
+    <div class="info">  
+        <div class="info-description">  
+            <p>THIS SITE IS SIMPLE AND STRAIGHTFORWARD - UPLOAD YOUR TRACK, TWEAK THE VOLUME BACK AND FORTH, ADJUST YOUR FAVORITE FREQUENCIES IN THE EQUALIZER, CHANGE THE PLAYBACK SPEED, LISTEN TO THE RESULT IN THE PLAYER AND DOWNLOAD YOUR MASTERPIECE. BECAUSE BEAUTY IS IN SIMPLICITY!</p>  
+            <p>THE REASON FOR CREATING THIS SITE IS THAT TWO FACTORS CAME TOGETHER AT THE RIGHT TIME. THE FIRST, AND PERHAPS THE KEY FACTOR, IS A STRICT DEADLINE, BECAUSE I MADE THIS SITE AS A COURSEWORK, AND I DID NOT WANT TO BE EXPELLED FROM UNIVERSITY (HA-HA). AND THE SECOND IS MY DESIRE TO CREATE SOMETHING THAT IS SOMEHOW RELATED TO MUSIC OR GRAPHICS. OFTEN I STOP LIKING THIS "SOMETHING" OVER TIME, BUT I TRY NOT TO UNDERESTIMATE MY CREATIVE IMPULSES, BECAUSE I DO NOT YET KNOW WHAT I WILL DO FOR A LIVING, AND ANY OPPORTUNITY TO SHOW MY SKILLS FOR ME NOW IS A POTENTIAL CRAFT.</p>  
+            <p>IF I EVER REMEMBER THAT I DEVELOPED THIS SITE, I WILL ADD NEW EFFECTS FOR YOU.</p>  
+            <p>I HOPE MY SITE WILL HELP YOU. HAVE FUN!</p>  
+        </div>     
+        <div class="info-header">ABOUT</div>       
+    </div>  
+
+    <footer>
+        <div class="footer-content">
+            <p class="author"><a href="https://github.com/AstrakovBA">AstrakovBA, 2025</a></p>
+            <p class="email"><a href="mailto:bororo8918@gmail.com">Send me an Email</a></p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="http://unpkg.com/tone"></script>
+    <script src="script.js"></script>
+    <script src="logo-anim.js"></script>
+
+</body>
