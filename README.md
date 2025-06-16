@@ -2,7 +2,7 @@
 
 Web-based audio processing application that provides straightforward and efficient tools for audio manipulation. Built with React and Django, MonoTone SFX offers a clean, intuitive interface for audio editing and effects processing.
 
-![site_image](schemes/site.png)
+![site_image](schemes/site.jpeg)
 
 ## Features
 
