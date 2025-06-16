@@ -1,0 +1,196 @@
+INFO 2025-06-14 15:27:56,958 views Получен POST запрос на сохранение аудио
+INFO 2025-06-14 15:27:56,961 views Получен файл: Смешарики - Энергичная тема.mp3, размер: 641611 байт
+INFO 2025-06-14 15:27:56,961 views Настройки: eq={'32': 0, '64': 0, '125': 0, '250': 0, '500': 0, '1000': 0, '2000': 0, '4000': 0, '8000': 0, '16000': 0}, volume=0.0, speed=1.0, preserve_pitch=True
+INFO 2025-06-14 15:27:56,961 views Директории для медиа-файлов проверены/созданы в C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media
+INFO 2025-06-14 15:27:57,005 views Оригинальный файл сохранен с ID: 5
+ERROR 2025-06-14 15:27:57,010 views Ошибка при обработке аудио: [WinError 2] Не удается найти указанный файл
+ERROR 2025-06-14 16:17:47,879 views FFmpeg не найден в системе
+ERROR 2025-06-14 16:17:53,157 views FFmpeg не найден в системе
+ERROR 2025-06-14 16:18:23,612 views FFmpeg не найден в системе
+INFO 2025-06-14 16:20:54,547 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 16:20:54,559 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\Смешарики - Энергичная тема.mp3
+INFO 2025-06-14 16:20:54,559 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\Смешарики - Энергичная тема.mp3 -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\processed_Смешарики - Энергичная тема.mp3
+ERROR 2025-06-14 16:20:55,299 views Ошибка FFmpeg: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mp3 @ 0000000002722840] Format mp3 detected only with low score of 1, misdetection possible!
+[mp3float @ 000000000271fec0] Header missing
+[mp3 @ 0000000002722840] Could not find codec parameters for stream 0 (Audio: mp3 (mp3float), 0 channels, fltp): unspecified frame size
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Input #0, mp3, from 'C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\РЎРјРµС€Р°СЂРёРєРё - Р­РЅРµСЂРіРёС‡РЅР°СЏ С‚РµРјР°.mp3':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Audio: mp3 (mp3float), 0 channels, fltp
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+[mp3float @ 0000000002cb9280] Header missing
+[aist#0:0/mp3 @ 0000000002720300] [dec:mp3float @ 0000000002cb8780] Error submitting packet to decoder: Invalid data found when processing input
+[aist#0:0/mp3 @ 0000000002720300] [dec:mp3float @ 0000000002cb8780] Decode error rate 1 exceeds maximum 0.666667
+[aist#0:0/mp3 @ 0000000002720300] [dec:mp3float @ 0000000002cb8780] Task finished with error code: -1145393733 (Error number -1145393733 occurred)
+[aist#0:0/mp3 @ 0000000002720300] [dec:mp3float @ 0000000002cb8780] Terminating thread with return code -1145393733 (Error number -1145393733 occurred)
+[graph_-1_in_0:0 @ 0000000002d06840] Neither number of channels nor channel layout specified
+Error initializing filters!
+[af#0:0 @ 0000000002cb5fc0] Task finished with error code: -22 (Invalid argument)
+[af#0:0 @ 0000000002cb5fc0] Terminating thread with return code -22 (Invalid argument)
+[aost#0:0/pcm_s16le @ 0000000002cb50c0] Could not open encoder before EOF
+[aost#0:0/pcm_s16le @ 0000000002cb50c0] Task finished with error code: -22 (Invalid argument)
+[aost#0:0/pcm_s16le @ 0000000002cb50c0] Terminating thread with return code -22 (Invalid argument)
+[out#0/mp3 @ 00000000027204c0] Nothing was written into output file, because at least one of its streams received no packets.
+size=       0KiB time=N/A bitrate=N/A speed=N/A    
+Conversion failed!
+
+INFO 2025-06-14 16:23:53,102 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 16:23:53,121 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\Смешарики - Энергичная тема.mp3
+INFO 2025-06-14 16:23:53,123 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\Смешарики - Энергичная тема.mp3 -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\processed_Смешарики - Энергичная тема.mp3
+INFO 2025-06-14 16:31:00,640 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 16:31:00,665 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\Смешарики - Энергичная тема.mp3
+INFO 2025-06-14 16:31:00,668 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -f mp3 -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\Смешарики - Энергичная тема.mp3 -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\processed_Смешарики - Энергичная тема.mp3
+ERROR 2025-06-14 16:31:01,263 views Ошибка FFmpeg: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mp3, from 'C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\РЎРјРµС€Р°СЂРёРєРё - Р­РЅРµСЂРіРёС‡РЅР°СЏ С‚РµРјР°.mp3':
+  Metadata:
+    encoder         : Lavf58.20.100
+  Duration: 00:00:40.07, start: 0.025057, bitrate: 128 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 44100 Hz, stereo, fltp, 128 kb/s
+      Metadata:
+        encoder         : Lavc58.35
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+[mp3 @ 000000000267f8c0] Invalid audio stream. Exactly one MP3 audio stream is required.
+[out#0/mp3 @ 000000000267f480] Could not write header (incorrect codec parameters ?): Invalid argument
+[af#0:0 @ 00000000026b0bc0] Error sending frames to consumers: Invalid argument
+[af#0:0 @ 00000000026b0bc0] Task finished with error code: -22 (Invalid argument)
+[af#0:0 @ 00000000026b0bc0] Terminating thread with return code -22 (Invalid argument)
+[out#0/mp3 @ 000000000267f480] Nothing was written into output file, because at least one of its streams received no packets.
+size=       0KiB time=N/A bitrate=N/A speed=N/A    
+Conversion failed!
+
+INFO 2025-06-14 16:34:55,249 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 16:34:55,283 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_3e97acdb-835f-495f-9c88-863a8ed95429.mp3
+INFO 2025-06-14 16:34:55,285 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_3e97acdb-835f-495f-9c88-863a8ed95429.mp3 -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_3e97acdb-835f-495f-9c88-863a8ed95429.wav
+INFO 2025-06-14 16:34:55,519 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_3e97acdb-835f-495f-9c88-863a8ed95429.wav
+INFO 2025-06-14 16:39:12,282 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 16:39:12,307 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_299a46b0-f664-4551-9695-2cfbde0d4f7a.mp3
+INFO 2025-06-14 16:39:12,308 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_299a46b0-f664-4551-9695-2cfbde0d4f7a.mp3 -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_299a46b0-f664-4551-9695-2cfbde0d4f7a.wav
+INFO 2025-06-14 16:39:12,546 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_299a46b0-f664-4551-9695-2cfbde0d4f7a.wav
+INFO 2025-06-14 18:47:05,333 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 18:47:05,349 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_55c99763-c114-4396-bce7-3717abec47e5.mp3
+INFO 2025-06-14 18:47:05,349 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_55c99763-c114-4396-bce7-3717abec47e5.mp3 -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_55c99763-c114-4396-bce7-3717abec47e5.wav
+INFO 2025-06-14 18:47:05,462 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_55c99763-c114-4396-bce7-3717abec47e5.wav
+INFO 2025-06-14 18:47:05,462 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_55c99763-c114-4396-bce7-3717abec47e5.mp3
+INFO 2025-06-14 18:52:35,253 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 18:52:35,270 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_2bab5521-9f4a-4ac5-8cbe-1eec4a41c3bf.mp3
+ERROR 2025-06-14 18:52:35,270 views Ошибка при обработке аудио: name 'eq_settings' is not defined
+INFO 2025-06-14 18:53:48,163 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 18:53:48,173 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f6415bc9-b225-4cd1-aed5-8b9322eb6489.mp3
+INFO 2025-06-14 18:53:48,183 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f6415bc9-b225-4cd1-aed5-8b9322eb6489.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=-6.3dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_f6415bc9-b225-4cd1-aed5-8b9322eb6489.wav
+INFO 2025-06-14 18:53:48,314 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_f6415bc9-b225-4cd1-aed5-8b9322eb6489.wav
+INFO 2025-06-14 18:53:48,320 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f6415bc9-b225-4cd1-aed5-8b9322eb6489.mp3
+INFO 2025-06-14 18:59:36,676 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 18:59:36,688 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_8b8b079c-5861-480c-967e-4ef67c1dbdf6.mp3
+INFO 2025-06-14 18:59:36,688 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_8b8b079c-5861-480c-967e-4ef67c1dbdf6.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_8b8b079c-5861-480c-967e-4ef67c1dbdf6.wav
+INFO 2025-06-14 18:59:36,818 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_8b8b079c-5861-480c-967e-4ef67c1dbdf6.wav
+INFO 2025-06-14 18:59:36,818 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_8b8b079c-5861-480c-967e-4ef67c1dbdf6.mp3
+INFO 2025-06-14 19:04:59,443 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:04:59,461 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_5dc2daf5-8afd-493b-8015-7173eba96d60.mp3
+INFO 2025-06-14 19:04:59,461 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_5dc2daf5-8afd-493b-8015-7173eba96d60.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_5dc2daf5-8afd-493b-8015-7173eba96d60.wav
+INFO 2025-06-14 19:04:59,591 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_5dc2daf5-8afd-493b-8015-7173eba96d60.wav
+INFO 2025-06-14 19:04:59,591 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_5dc2daf5-8afd-493b-8015-7173eba96d60.mp3
+INFO 2025-06-14 19:05:18,692 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:05:18,701 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_17600a95-5413-4d31-8dab-b4e843dbf1cf.mp3
+INFO 2025-06-14 19:05:18,706 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_17600a95-5413-4d31-8dab-b4e843dbf1cf.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_17600a95-5413-4d31-8dab-b4e843dbf1cf.wav
+INFO 2025-06-14 19:05:18,854 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_17600a95-5413-4d31-8dab-b4e843dbf1cf.wav
+INFO 2025-06-14 19:05:18,854 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_17600a95-5413-4d31-8dab-b4e843dbf1cf.mp3
+INFO 2025-06-14 19:05:46,486 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:05:46,500 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_44dd05c8-4b6f-42aa-a996-09db1fda07d5.mp3
+INFO 2025-06-14 19:05:46,502 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_44dd05c8-4b6f-42aa-a996-09db1fda07d5.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_44dd05c8-4b6f-42aa-a996-09db1fda07d5.wav
+INFO 2025-06-14 19:05:46,629 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_44dd05c8-4b6f-42aa-a996-09db1fda07d5.wav
+INFO 2025-06-14 19:05:46,629 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_44dd05c8-4b6f-42aa-a996-09db1fda07d5.mp3
+INFO 2025-06-14 19:07:12,718 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:07:12,729 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f04aab50-8b2a-48d2-b8f4-75766dc1bd61.mp3
+INFO 2025-06-14 19:07:12,729 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f04aab50-8b2a-48d2-b8f4-75766dc1bd61.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_f04aab50-8b2a-48d2-b8f4-75766dc1bd61.wav
+INFO 2025-06-14 19:07:12,858 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_f04aab50-8b2a-48d2-b8f4-75766dc1bd61.wav
+INFO 2025-06-14 19:07:12,858 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f04aab50-8b2a-48d2-b8f4-75766dc1bd61.mp3
+INFO 2025-06-14 19:07:22,418 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:07:22,451 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_bd88c5c0-ab61-4590-9c1e-871a2fdc1abe.mp3
+INFO 2025-06-14 19:07:22,454 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_bd88c5c0-ab61-4590-9c1e-871a2fdc1abe.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=-15.7dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_bd88c5c0-ab61-4590-9c1e-871a2fdc1abe.wav
+INFO 2025-06-14 19:07:22,699 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_bd88c5c0-ab61-4590-9c1e-871a2fdc1abe.wav
+INFO 2025-06-14 19:07:22,831 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_bd88c5c0-ab61-4590-9c1e-871a2fdc1abe.mp3
+INFO 2025-06-14 19:13:15,551 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_ec396e59-641b-481d-ad27-84284b08a686.mp3
+INFO 2025-06-14 19:13:15,585 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+ERROR 2025-06-14 19:13:15,589 views Ошибка при сохранении файла: sequence item 0: expected str instance, tuple found
+INFO 2025-06-14 19:15:26,380 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f2ac1e79-d27d-409f-9d7d-b9eb72d2d8ec.mp3
+INFO 2025-06-14 19:15:26,413 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:15:26,413 views Выполняем команду FFmpeg: (True, 'C:\\ffmpeg\\bin\\ffmpeg.exe') -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f2ac1e79-d27d-409f-9d7d-b9eb72d2d8ec.mp3 -af equalizer=f=32:width_type=h:width=200:g=0,equalizer=f=64:width_type=h:width=200:g=0,equalizer=f=125:width_type=h:width=200:g=0,equalizer=f=250:width_type=h:width=200:g=0,equalizer=f=500:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=2000:width_type=h:width=200:g=0,equalizer=f=4000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,equalizer=f=16000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_f2ac1e79-d27d-409f-9d7d-b9eb72d2d8ec.wav
+ERROR 2025-06-14 19:15:26,417 views Ошибка при сохранении файла: [WinError 2] Не удается найти указанный файл
+INFO 2025-06-14 19:18:00,510 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_7f453ff6-32b6-40b5-83ac-2eb3831f6388.mp3
+INFO 2025-06-14 19:18:00,541 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:21:01,193 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:21:01,210 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_3601cf92-b734-47b8-ba11-1da5b65c9106.mp3
+INFO 2025-06-14 19:21:01,210 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_3601cf92-b734-47b8-ba11-1da5b65c9106.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_3601cf92-b734-47b8-ba11-1da5b65c9106.wav
+INFO 2025-06-14 19:21:01,360 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_3601cf92-b734-47b8-ba11-1da5b65c9106.wav
+INFO 2025-06-14 19:21:01,362 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_3601cf92-b734-47b8-ba11-1da5b65c9106.mp3
+INFO 2025-06-14 19:23:04,820 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-14 19:23:04,833 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f07b5960-8d56-4a66-9e51-ea533fc0c9a3.mp3
+INFO 2025-06-14 19:23:04,833 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f07b5960-8d56-4a66-9e51-ea533fc0c9a3.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_f07b5960-8d56-4a66-9e51-ea533fc0c9a3.wav
+INFO 2025-06-14 19:23:04,993 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_f07b5960-8d56-4a66-9e51-ea533fc0c9a3.wav
+INFO 2025-06-14 19:23:04,995 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_f07b5960-8d56-4a66-9e51-ea533fc0c9a3.mp3
+INFO 2025-06-16 15:09:56,856 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-16 15:09:56,875 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_11e59cf7-9a2c-4e6c-83b4-701e94c1a406.mp3
+INFO 2025-06-16 15:09:56,875 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_11e59cf7-9a2c-4e6c-83b4-701e94c1a406.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_11e59cf7-9a2c-4e6c-83b4-701e94c1a406.wav
+INFO 2025-06-16 15:09:57,109 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_11e59cf7-9a2c-4e6c-83b4-701e94c1a406.wav
+INFO 2025-06-16 15:09:57,109 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_11e59cf7-9a2c-4e6c-83b4-701e94c1a406.mp3
+INFO 2025-06-16 15:10:11,027 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-16 15:10:11,128 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_b069d3c7-1ba9-4d1b-baf4-dc4429b8b460.mp3
+INFO 2025-06-16 15:10:11,141 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_b069d3c7-1ba9-4d1b-baf4-dc4429b8b460.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_b069d3c7-1ba9-4d1b-baf4-dc4429b8b460.wav
+INFO 2025-06-16 15:10:11,437 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_b069d3c7-1ba9-4d1b-baf4-dc4429b8b460.wav
+INFO 2025-06-16 15:10:11,458 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_b069d3c7-1ba9-4d1b-baf4-dc4429b8b460.mp3
+INFO 2025-06-16 15:12:36,203 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+ERROR 2025-06-16 15:12:36,203 views Неожиданная ошибка: Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+INFO 2025-06-16 15:12:50,748 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+ERROR 2025-06-16 15:12:50,748 views Неожиданная ошибка: Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+INFO 2025-06-16 15:12:55,398 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+ERROR 2025-06-16 15:12:55,398 views Неожиданная ошибка: Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+INFO 2025-06-16 15:14:19,678 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-16 15:14:19,694 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_02454862-701b-45a0-9ee1-e3844ea17b4d.mp3
+INFO 2025-06-16 15:14:19,694 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_02454862-701b-45a0-9ee1-e3844ea17b4d.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_02454862-701b-45a0-9ee1-e3844ea17b4d.wav
+INFO 2025-06-16 15:14:19,824 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_02454862-701b-45a0-9ee1-e3844ea17b4d.wav
+INFO 2025-06-16 15:14:19,824 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_02454862-701b-45a0-9ee1-e3844ea17b4d.mp3
+INFO 2025-06-16 15:15:17,007 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-16 15:15:17,017 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_71168433-ecb2-4d24-9d95-6e6dfebb40c7.mp3
+INFO 2025-06-16 15:15:17,020 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_71168433-ecb2-4d24-9d95-6e6dfebb40c7.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_71168433-ecb2-4d24-9d95-6e6dfebb40c7.wav
+INFO 2025-06-16 15:15:17,143 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_71168433-ecb2-4d24-9d95-6e6dfebb40c7.wav
+INFO 2025-06-16 15:15:17,143 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_71168433-ecb2-4d24-9d95-6e6dfebb40c7.mp3
+INFO 2025-06-16 15:15:27,956 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-16 15:15:27,966 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_816770f5-0595-4486-8cdc-bc41578727e2.mp3
+INFO 2025-06-16 15:15:27,966 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_816770f5-0595-4486-8cdc-bc41578727e2.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_816770f5-0595-4486-8cdc-bc41578727e2.wav
+INFO 2025-06-16 15:15:28,099 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_816770f5-0595-4486-8cdc-bc41578727e2.wav
+INFO 2025-06-16 15:15:28,099 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_816770f5-0595-4486-8cdc-bc41578727e2.mp3
+INFO 2025-06-16 15:15:47,798 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-16 15:15:47,807 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_beaa351c-96be-45dd-acab-9f7a9d9fd1e8.mp3
+INFO 2025-06-16 15:15:47,807 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_beaa351c-96be-45dd-acab-9f7a9d9fd1e8.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_beaa351c-96be-45dd-acab-9f7a9d9fd1e8.wav
+INFO 2025-06-16 15:15:47,938 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_beaa351c-96be-45dd-acab-9f7a9d9fd1e8.wav
+INFO 2025-06-16 15:15:47,945 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_beaa351c-96be-45dd-acab-9f7a9d9fd1e8.mp3
+INFO 2025-06-16 15:16:06,523 views FFmpeg найден: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+INFO 2025-06-16 15:16:06,526 views Файл сохранен: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_49531ea7-713e-45d3-a8d1-7be2ec6b850c.mp3
+INFO 2025-06-16 15:16:06,526 views Выполняем команду FFmpeg: C:\ffmpeg\bin\ffmpeg.exe -y -i C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_49531ea7-713e-45d3-a8d1-7be2ec6b850c.mp3 -af equalizer=f=60:width_type=h:width=200:g=0,equalizer=f=1000:width_type=h:width=200:g=0,equalizer=f=8000:width_type=h:width=200:g=0,volume=0.0dB -acodec pcm_s16le -ar 44100 -ac 2 C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_49531ea7-713e-45d3-a8d1-7be2ec6b850c.wav
+INFO 2025-06-16 15:16:06,657 views Аудио успешно обработано: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\processed\output_49531ea7-713e-45d3-a8d1-7be2ec6b850c.wav
+INFO 2025-06-16 15:16:06,657 views Временный файл удален: C:\Users\boror\OneDrive\Desktop\monotone\monotone-back\monotoneDjango\media\input_49531ea7-713e-45d3-a8d1-7be2ec6b850c.mp3
