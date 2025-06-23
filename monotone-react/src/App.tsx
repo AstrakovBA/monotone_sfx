@@ -1,17 +1,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 import WaveSurfer from 'wavesurfer.js';
-import * as Tone from 'tone';
+import LogoAnimation from './LogoAnimation';
 import './App.css';
 
+interface AudioConfig {
+  eqSettings: Record<number, number>;
+  volume: number;
+  speed: number;
+}
+
 const App: React.FC = () => {
+  // Состояния
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0);
   const [speed, setSpeed] = useState(1);
   const [preservePitch, setPreservePitch] = useState(true);
   const [eqValues, setEqValues] = useState<number[]>(Array(10).fill(0));
+  
+  // Refs
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const waveformRef = useRef<HTMLDivElement>(null);
+  
+  // Константы
+  const API_BASE_URL = 'http://localhost:8000/api';
+  const eqBands = [32, 64, 125, 250, 500, 1000, 2000, 4000, 8000, 16000];
 
+  // Инициализация WaveSurfer
   useEffect(() => {
     if (waveformRef.current) {
       wavesurferRef.current = WaveSurfer.create({
@@ -22,14 +36,15 @@ const App: React.FC = () => {
         barWidth: 2,
         barRadius: 3,
         height: 100,
-        barGap: 3
+        barGap: 3,
+        backend: 'MediaElement'
       });
 
       wavesurferRef.current.on('play', () => setIsPlaying(true));
       wavesurferRef.current.on('pause', () => setIsPlaying(false));
       wavesurferRef.current.on('finish', () => setIsPlaying(false));
 
-      // Load default track
+      // Загрузка тестового трека
       wavesurferRef.current.load('/audio/default_track.mp3');
     }
 
@@ -40,10 +55,27 @@ const App: React.FC = () => {
     };
   }, []);
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  // Обработчики событий
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file && wavesurferRef.current) {
+    if (!file || !wavesurferRef.current) return;
+
+    try {
       wavesurferRef.current.loadBlob(file);
+      const formData = new FormData();
+      formData.append('audio_file', file);
+
+      const response = await fetch(`${API_BASE_URL}/upload/`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('File uploaded:', result);
+      }
+    } catch (error) {
+      console.error('Upload error:', error);
     }
   };
 
@@ -71,10 +103,17 @@ const App: React.FC = () => {
     }
   };
 
-  const handleEqChange = (index: number, value: number) => {
+  const handleEqChange = async (index: number, value: number) => {
     const newEqValues = [...eqValues];
     newEqValues[index] = value;
     setEqValues(newEqValues);
+
+    // Отправка настроек на сервер
+    await sendAudioConfig({
+      eqSettings: Object.fromEntries(eqBands.map((band, i) => [band, newEqValues[i]])),
+      volume,
+      speed,
+    });
   };
 
   const togglePlayPause = () => {
@@ -89,91 +128,116 @@ const App: React.FC = () => {
     }
   };
 
-  const saveAudio = () => {
-    if (wavesurferRef.current) {
-      const audioData = wavesurferRef.current.getDecodedData();
-      if (audioData) {
-        // Create an offline audio context
-        const offlineCtx = new OfflineAudioContext(
-          audioData.numberOfChannels,
-          audioData.length,
-          audioData.sampleRate
-        );
-
-        // Create a buffer source
-        const source = offlineCtx.createBufferSource();
-        source.buffer = audioData;
-        source.connect(offlineCtx.destination);
-        source.start();
-
-        // Render the audio
-        offlineCtx.startRendering().then(renderedBuffer => {
-          // Convert to WAV
-          const wav = audioBufferToWav(renderedBuffer);
-          const blob = new Blob([wav], { type: 'audio/wav' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'processed_audio.wav';
-          a.click();
-          URL.revokeObjectURL(url);
-        });
-      }
+  // Функция для отправки конфигурации
+  const sendAudioConfig = async (config: AudioConfig) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/config/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(config),
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('Config save error:', error);
     }
   };
 
-  // Helper function to convert AudioBuffer to WAV
+  // Функция сохранения аудио
+  const saveAudio = async () => {
+    if (!wavesurferRef.current) return;
+
+    try {
+      const audioData = wavesurferRef.current.getDecodedData();
+      if (!audioData) throw new Error('No audio data');
+      
+      // Конвертация в WAV
+      const wavBlob = new Blob([audioBufferToWav(audioData)], { type: 'audio/wav' });
+
+      // Подготовка данных
+      const formData = new FormData();
+      formData.append('audio', wavBlob, 'processed.wav');
+      formData.append('eq_settings', JSON.stringify(
+        Object.fromEntries(eqBands.map((band, i) => [band, eqValues[i]]))
+      ));
+      formData.append('volume', volume.toString());
+      formData.append('speed', speed.toString());
+
+      // Отправка на сервер
+      const response = await fetch(`${API_BASE_URL}/save/`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error('Save failed');
+
+      const result = await response.json();
+      console.log('Save result:', result);
+
+      // Скачивание файла
+      if (result.download_url) {
+        window.open(result.download_url, '_blank');
+      }
+
+    } catch (error) {
+      console.error('Save error:', error);
+    }
+  };
+
+  // Функция конвертации AudioBuffer в WAV
   const audioBufferToWav = (buffer: AudioBuffer): ArrayBuffer => {
     const numOfChan = buffer.numberOfChannels;
-    const length = buffer.length * numOfChan * 2;
-    const buffer2 = new ArrayBuffer(44 + length);
-    const view = new DataView(buffer2);
-    const channels = [];
-    let sample;
+    const length = buffer.length * numOfChan * 2 + 44;
+    const bufferOut = new ArrayBuffer(length);
+    const view = new DataView(bufferOut);
     let offset = 0;
     let pos = 0;
-
-    // Write WAV header
-    setUint32(0x46464952);                         // "RIFF"
-    setUint32(36 + length);                        // file length - 8
-    setUint32(0x45564157);                         // "WAVE"
-    setUint32(0x20746d66);                         // "fmt " chunk
-    setUint32(16);                                 // length = 16
-    setUint16(1);                                  // PCM (uncompressed)
-    setUint16(numOfChan);
-    setUint32(buffer.sampleRate);
-    setUint32(buffer.sampleRate * 2 * numOfChan);  // avg. bytes/sec
-    setUint16(numOfChan * 2);                      // block-align
-    setUint16(16);                                 // 16-bit
-    setUint32(0x61746164);                         // "data" - chunk
-    setUint32(length);                             // chunk length
-
-    // Write interleaved data
-    for (let i = 0; i < buffer.numberOfChannels; i++) {
-      channels.push(buffer.getChannelData(i));
-    }
-
-    while (pos < buffer.length) {
-      for (let i = 0; i < numOfChan; i++) {
-        sample = Math.max(-1, Math.min(1, channels[i][pos]));
-        sample = (0.5 + sample < 0 ? sample * 32768 : sample * 32767) | 0;
-        view.setInt16(44 + offset, sample, true);
-        offset += 2;
-      }
-      pos++;
-    }
-
-    function setUint16(data: number) {
+  
+    // Вспомогательные форматные функции
+    const setUint16 = (data: number) => {
       view.setUint16(pos, data, true);
       pos += 2;
-    }
-
-    function setUint32(data: number) {
+    };
+  
+    const setUint32 = (data: number) => {
       view.setUint32(pos, data, true);
       pos += 4;
+    };
+  
+    // WAV-заголовок
+    setUint32(0x46464952); // "RIFF"
+    setUint32(length - 8); // file length - 8
+    setUint32(0x45564157); // "WAVE"
+    setUint32(0x20746d66); // "fmt " chunk
+    setUint32(16); // length = 16
+    setUint16(1); // PCM (uncompressed)
+    setUint16(numOfChan);
+    setUint32(buffer.sampleRate);
+    setUint32(buffer.sampleRate * 2 * numOfChan); // avg. bytes/sec
+    setUint16(numOfChan * 2); // block-align
+    setUint16(16); // 16-bit
+    setUint32(0x61746164); // "data" chunk
+    setUint32(length - pos - 4); // chunk length
+  
+    // Запись данных
+    const channels = [];
+    for (let i = 0; i < numOfChan; i++) {
+      channels.push(buffer.getChannelData(i));
     }
-
-    return buffer2;
+  
+    while (pos < length) {
+      for (let i = 0; i < numOfChan; i++) {
+        // Конвертация
+        let sample = Math.max(-1, Math.min(1, channels[i][offset]));
+        sample = (0.5 + sample < 0 ? sample * 32768 : sample * 32767) | 0;
+        view.setInt16(pos, sample, true);
+        pos += 2;
+      }
+      offset++;
+    }
+  
+    return bufferOut;
   };
 
   return (
@@ -181,7 +245,9 @@ const App: React.FC = () => {
       <header>
         <div className="header-content">
           <div className="logo-wrap">
-            <div className="anim-wrap"></div>
+            <div className="anim-wrap">
+              <LogoAnimation />
+            </div>
           </div>
           <div className="logo-text-wrap">
             <p className="logo-text">MONOTONE SFX</p>
@@ -194,7 +260,13 @@ const App: React.FC = () => {
         <div className="file-controls">
           <button type="button" className="btn-load">
             <i className="fa fa-folder-open"></i> LOAD
-            <input type="file" id="file-input" accept="audio/*" onChange={handleFileUpload} style={{ display: 'none' }} />
+            <input 
+              type="file" 
+              id="file-input" 
+              accept="audio/*" 
+              onChange={handleFileUpload} 
+              style={{ display: 'none' }} 
+            />
           </button>
           <button type="button" className="btn-save" onClick={saveAudio}>
             <i className="fa fa-save"></i> SAVE
@@ -206,7 +278,15 @@ const App: React.FC = () => {
             <span className="volume-value-container">
               <span id="volume-value">{volume}</span><span className="db-text">dB</span>
             </span>
-            <input type="range" id="master-volume" min="-20" max="0" value={volume} step="0.1" onChange={handleVolumeChange} />
+            <input 
+              type="range" 
+              id="master-volume" 
+              min="-20" 
+              max="0" 
+              value={volume} 
+              step="0.1" 
+              onChange={handleVolumeChange} 
+            />
           </label>
         </div>
       </div>
@@ -229,7 +309,7 @@ const App: React.FC = () => {
       <div className="fx-wrap">
         <div className="fx-block fx1">
           <div className="equalizer-container">
-            {[32, 64, 125, 250, 500, 1000, 2000, 4000, 8000, 16000].map((freq, index) => (
+            {eqBands.map((freq, index) => (
               <div key={freq} className="slider-wrapper">
                 <span className="freq-label">{freq}Hz</span>
                 <input
@@ -258,7 +338,7 @@ const App: React.FC = () => {
                 max="4"
                 step="0.05"
                 value={speed}
-                onChange={(e) => handleSpeedChange(e as any)}
+                onChange={handleSpeedChange}
               />
               <div className="pitch-control">
                 <input
